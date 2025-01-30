@@ -30,7 +30,7 @@ export const AuthProvider = ({ children }) => {
             });
             
             const data = await response.json();
-            console.log('Respuesta de verificación:', data);
+            //console.log('Respuesta de verificación:', data);
 
             if (response.ok && data.success) {
                 // Asegúrate de que el usuario se establezca correctamente
@@ -45,7 +45,7 @@ export const AuthProvider = ({ children }) => {
                 setUser(null);
             }
         } catch (error) {
-            console.error('Error verificando token:', error);
+            //console.error('Error verificando token:', error);
             localStorage.removeItem('token');
             setUser(null);
         } finally {
@@ -64,7 +64,7 @@ export const AuthProvider = ({ children }) => {
             });
 
             const data = await response.json();
-            console.log('Respuesta del login:', data);
+            //console.log('Respuesta del login:', data);
 
             if (response.ok && data.token) {
                 localStorage.setItem('token', data.token);
@@ -83,7 +83,7 @@ export const AuthProvider = ({ children }) => {
                 };
             }
         } catch (error) {
-            console.error('Error en login:', error);
+            //console.error('Error en login:', error);
             return { success: false, error: 'Error de conexión' };
         }
     };
@@ -106,7 +106,7 @@ export const AuthProvider = ({ children }) => {
                 return { success: false, error: data.message };
             }
         } catch (error) {
-            console.error('Error en registro:', error);
+            //console.error('Error en registro:', error);
             return { success: false, error: 'Error de conexión' };
         }
     };
@@ -124,7 +124,7 @@ export const AuthProvider = ({ children }) => {
         loading
     };
 
-    console.log('Estado actual del contexto:', value); // Depuración
+    //console.log('Estado actual del contexto:', value); // Depuración
 
     return (
         <AuthContext.Provider value={value}>

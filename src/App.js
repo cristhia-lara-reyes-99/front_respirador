@@ -7,18 +7,18 @@ import MindfulBreathingApp from './components/MindfulBreathingApp';
 
 const PrivateRoute = ({ children }) => {
     const { user, loading } = useAuth();
-    console.log('PrivateRoute - Usuario:', user, 'Cargando:', loading); // Depuración
+    //console.log('PrivateRoute - Usuario:', user, 'Cargando:', loading); // Depuración
 
     if (loading) {
         return <div>Cargando...</div>;
     }
 
     if (!user) {
-        console.log('No hay usuario, redirigiendo a login...'); // Depuración
+        //console.log('No hay usuario, redirigiendo a login...'); // Depuración
         return <Navigate to="/login" replace />;
     }
 
-    console.log('Usuario autenticado, mostrando contenido protegido'); // Depuración
+    //console.log('Usuario autenticado, mostrando contenido protegido'); // Depuración
     return children;
 };
 

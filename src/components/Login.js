@@ -12,9 +12,9 @@ const Login = () => {
     const { login, user } = useAuth();
 
     useEffect(() => {
-        console.log('Estado del usuario:', user);
+        //console.log('Estado del usuario:', user);
         if (user) {
-            console.log('Redirigiendo a /app...');
+            //console.log('Redirigiendo a /app...');
             navigate('/app');
         }
     }, [user, navigate]);
@@ -25,18 +25,18 @@ const Login = () => {
         setLoading(true);
 
         try {
-            console.log('Intentando login...');
+            //console.log('Intentando login...');
             const result = await login(username, password);
-            console.log('Resultado del login:', result);
+            //console.log('Resultado del login:', result);
             
             if (result.success) {
-                console.log('Login exitoso, redirigiendo...');
+                //console.log('Login exitoso, redirigiendo...');
                 navigate('/app');
             } else {
                 setError(result.error || 'Error al iniciar sesión');
             }
         } catch (err) {
-            console.error('Error en login:', err);
+            //console.error('Error en login:', err);
             setError('Error al conectar con el servidor');
         } finally {
             setLoading(false);
