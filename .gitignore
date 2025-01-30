@@ -6,6 +6,7 @@
 .pnp.js
 save.py
 back.py
+.env
 
 # testing
 /coverage
